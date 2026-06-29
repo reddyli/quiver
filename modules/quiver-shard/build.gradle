@@ -1,0 +1,19 @@
+plugins {
+    id 'application'
+}
+
+application {
+    mainClass = 'li.reddy.quiver.shard.ShardMain'
+    applicationDefaultJvmArgs = [
+        '--add-modules=jdk.incubator.vector',
+        '--enable-native-access=ALL-UNNAMED'
+    ]
+}
+
+dependencies {
+    // implementation project(':quiver-proto')   // wired in Phase 2
+    // implementation project(':quiver-common')  // wired in Phase 1
+
+    implementation "org.slf4j:slf4j-api:${slf4jVersion}"
+    runtimeOnly    "ch.qos.logback:logback-classic:${logbackVersion}"
+}

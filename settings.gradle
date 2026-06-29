@@ -1,0 +1,11 @@
+rootProject.name = 'quiver'
+
+['quiver-proto',
+ 'quiver-common',
+ 'quiver-shard',
+ 'quiver-orchestrator',
+ 'quiver-client',
+ 'quiver-bench'].each { name ->
+    include ":${name}"
+    project(":${name}").projectDir = file("modules/${name}")
+}

@@ -1,0 +1,53 @@
+plugins {
+    id 'java'
+}
+
+ext {
+    grpcVersion     = '1.65.1'
+    protobufVersion = '3.25.3'
+    pulsarVersion   = '3.3.1'
+    slf4jVersion    = '2.0.13'
+    logbackVersion  = '1.5.6'
+    junitVersion    = '5.10.2'
+    jmhVersion      = '1.37'
+}
+
+allprojects {
+    group   = 'li.reddy.quiver'
+    version = '0.1.0-SNAPSHOT'
+
+    repositories {
+        mavenCentral()
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(23)
+        }
+    }
+
+    tasks.withType(JavaCompile).configureEach {
+        options.encoding     = 'UTF-8'
+        options.compilerArgs += ['--add-modules', 'jdk.incubator.vector']
+    }
+
+    tasks.withType(JavaExec).configureEach {
+        jvmArgs '--add-modules=jdk.incubator.vector',
+                '--enable-native-access=ALL-UNNAMED'
+    }
+
+    tasks.withType(Test).configureEach {
+        useJUnitPlatform()
+        jvmArgs '--add-modules=jdk.incubator.vector',
+                '--enable-native-access=ALL-UNNAMED'
+    }
+
+    dependencies {
+        testImplementation "org.junit.jupiter:junit-jupiter:${junitVersion}"
+        testRuntimeOnly    "org.junit.platform:junit-platform-launcher"
+    }
+}

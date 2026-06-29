@@ -1,0 +1,2 @@
+// Phase 0: empty. JMH plugin + benchmark sources added in Phase 5.
+dependencies { }
