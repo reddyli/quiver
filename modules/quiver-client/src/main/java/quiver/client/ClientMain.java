@@ -1,4 +1,4 @@
-package li.reddy.quiver.client;
+package quiver.client;
 
 public final class ClientMain {
     private ClientMain() {}

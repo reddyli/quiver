@@ -3,7 +3,7 @@ plugins {
 }
 
 application {
-    mainClass = 'li.reddy.quiver.orchestrator.OrchestratorMain'
+    mainClass = 'quiver.orchestrator.OrchestratorMain'
     applicationDefaultJvmArgs = [
         '--add-modules=jdk.incubator.vector',
         '--enable-native-access=ALL-UNNAMED'

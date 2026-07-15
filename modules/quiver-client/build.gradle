@@ -3,7 +3,7 @@ plugins {
 }
 
 application {
-    mainClass = 'li.reddy.quiver.client.ClientMain'
+    mainClass = 'quiver.client.ClientMain'
     applicationDefaultJvmArgs = [
         '--add-modules=jdk.incubator.vector',
         '--enable-native-access=ALL-UNNAMED'

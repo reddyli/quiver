@@ -13,7 +13,7 @@ ext {
 }
 
 allprojects {
-    group   = 'li.reddy.quiver'
+    group   = 'quiver'
     version = '0.1.0-SNAPSHOT'
 
     repositories {

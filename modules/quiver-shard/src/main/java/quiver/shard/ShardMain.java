@@ -1,4 +1,4 @@
-package li.reddy.quiver.shard;
+package quiver.shard;
 
 public final class ShardMain {
     private ShardMain() {}

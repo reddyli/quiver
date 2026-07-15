@@ -3,7 +3,7 @@ plugins {
 }
 
 application {
-    mainClass = 'li.reddy.quiver.shard.ShardMain'
+    mainClass = 'quiver.shard.ShardMain'
     applicationDefaultJvmArgs = [
         '--add-modules=jdk.incubator.vector',
         '--enable-native-access=ALL-UNNAMED'

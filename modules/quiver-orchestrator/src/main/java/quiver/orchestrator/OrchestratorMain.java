@@ -1,4 +1,4 @@
-package li.reddy.quiver.orchestrator;
+package quiver.orchestrator;
 
 public final class OrchestratorMain {
     private OrchestratorMain() {}
